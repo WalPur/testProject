@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All tournaments</h1>
+    {% for tournament in tournament_list %}
+    <ul>
+        <li>Name: {{ tournament.name }}</li>
+        <li>Status: {{ tournament.status }}</li>
+        <li>Date of start: {{ tournament.start_date }}</li>
+        <li>Date of finish: {{ tournament.finish_date }}</li>
+        <li>Description: {{ tournament.description }}</li>
+        <li>Type: {{ tournament.type }}</li>
+        <li>Format: {{ tournament.format }}</li>
+    </ul>
+    {% endfor %}
+</body>
+</html>
