@@ -1,9 +1,7 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.views.generic import ListView
 
-from .models import Tournament
+from web.models import Tournament
+
 
 class TournamentListView(ListView):
     model = Tournament

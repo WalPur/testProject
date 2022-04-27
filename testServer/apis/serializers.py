@@ -3,10 +3,21 @@ from rest_framework import serializers
 from web.models import Tournament
 from accounts.models import CustomUser
 
+
 class TournamentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tournament
-        fields = ("id", "name", "status", "start_date", "finish_date", "description", "type", "format", "is_cancelled")
+        fields = (
+            "id",
+            "name",
+            "status",
+            "start_date",
+            "finish_date",
+            "description",
+            "type",
+            "format",
+            "is_cancelled"
+        )
 
 
 class UsersSerializers(serializers.ModelSerializer):
