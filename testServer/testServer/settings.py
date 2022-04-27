@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'web.apps.WebConfig',
-    'apis.apps.ApisConfig'
+    'apis.apps.ApisConfig',
+    "accounts.apps.AccountsConfig",
 ]
 
-REST_FRAMEWORK = { # new
+REST_FRAMEWORK = { 
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
     ],
@@ -130,3 +131,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

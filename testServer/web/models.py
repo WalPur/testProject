@@ -27,6 +27,7 @@ class Tournament(models.Model):
         ('INDIVIDDUAL', 'Individual')
     ]
     format = models.CharField(choices=FORMAT_CHOICES, max_length=128)
+    is_cancelled = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
