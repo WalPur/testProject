@@ -3,11 +3,13 @@ import environ
 
 env = environ.Env()
 
+environ.Env.read_env()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-8pteayv&_h1%8&jw^l$5!%&9hfhejsq4!%vkqa@!+=_fx&i5y9'
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -64,11 +66,11 @@ WSGI_APPLICATION = 'testServer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypass',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
     }
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',

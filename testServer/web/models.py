@@ -11,6 +11,25 @@ class TournamentStatuses(models.TextChoices):
     FINISHED = 'FINISHED'
     CANCELLED = 'CANCELLED'
 
+
+class TypeChoices(models.TextChoices):
+    """Типы турниров"""
+
+    LOCAL = "LOCAL"
+    REGION = "REGION"
+    RUSSIA = "RUSSIA"
+    WORLD = "WORLD"
+    ONLINE = "ONLINE"
+
+
+class FormatChoices(models.TextChoices):
+    """Форматы турниров"""
+
+    PAIR = "PAIR"
+    TEAM = "TEAM"
+    INDIVIDDUAL = "INDIVIDDUAL"
+
+
 class Tournament(models.Model):
     """Модель турнира."""
 
@@ -18,26 +37,21 @@ class Tournament(models.Model):
     status = models.CharField(
         choices=TournamentStatuses.choices,
         max_length=128,
-        default=TournamentStatuses.CREATED
+        default=TournamentStatuses.CREATED,
     )
     start_date = models.DateField()
     finish_date = models.DateField()
     description = models.TextField()
-    TYPE_CHOICES = [
-        ('LOCAL', 'Local'),
-        ('REGION', 'Region'),
-        ('RUSSIA', 'Russia'),
-        ('WORLD', 'World'),
-        ('ONLINE', 'Online')
-    ]
-    type = models.CharField(choices=TYPE_CHOICES, max_length=128)
-    FORMAT_CHOICES = [
-        ('PAIR', 'Pair'),
-        ('TEAM', 'Team'),
-        ('INDIVIDDUAL', 'Individual')
-    ]
-    format = models.CharField(choices=FORMAT_CHOICES, max_length=128)
-    is_cancelled = models.BooleanField(default=False)
+    type = models.CharField(
+        choices=TypeChoices.choices,
+        max_length=128,
+        default=TypeChoices.LOCAL,
+    )
+    format = models.CharField(
+        choices=FormatChoices.choices,
+        max_length=128,
+        default=FormatChoices.PAIR,
+    )
     editors = models.ManyToManyField(
         CustomUser,
         'tournaments',
