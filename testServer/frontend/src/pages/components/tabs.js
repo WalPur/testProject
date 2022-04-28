@@ -1,16 +1,18 @@
+import { NavLink } from 'react-router-dom';
+
 
 function Tabs() {
     return (
       <div className="Tabs container-fluid">
         <ul className="nav nav-tabs">
             <li className="nav-item">
-                <a className="nav-link active" href="#">Редактор</a>
+                <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}  to="/tournaments/editor">Редактор</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Доступ</a>
+                <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/tournaments/access">Доступ</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Форма регистрации</a>
+                <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/tournaments/registration">Форма регистрации</NavLink>
             </li>
             <li className="nav-item">
                 <a className="nav-link disabled">Заявки</a>
@@ -24,4 +26,3 @@ function Tabs() {
   }
   
   export default Tabs;
-  
