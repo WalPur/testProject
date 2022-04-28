@@ -1,15 +1,15 @@
 from pathlib import Path
 import environ
 
-env = environ.Env()
-
-environ.Env.read_env()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = env('DEBUG')
+env = environ.Env()
+env.read_env(BASE_DIR / 'testServer/.env')
+
+SECRET_KEY = env('SECRET_KEY', str, 'supersecret')
+
+DEBUG = env('DEBUG', bool, True)
 
 ALLOWED_HOSTS = []
 
