@@ -5,4 +5,4 @@ from web.models import Tournament
 
 class TournamentListView(ListView):
     model = Tournament
-    template_name = "tournament_list.html"
+    template_name = "index.html"

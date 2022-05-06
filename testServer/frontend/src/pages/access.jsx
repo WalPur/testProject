@@ -2,14 +2,14 @@ import Header from './components/header'
 import Tabs from './components/tabs'
 
 
-function Registration() {
+function Access() {
     return (
-      <div className="Editor">
+      <div className="Access">
           <Header />
           <Tabs />
       </div>
     );
   }
   
-  export default Registration;
+  export default Access;
   

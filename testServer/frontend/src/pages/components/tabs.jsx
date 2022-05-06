@@ -15,10 +15,10 @@ function Tabs() {
                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/tournaments/registration">Форма регистрации</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link disabled">Заявки</a>
+                {/* <a className="nav-link disabled">Заявки</a> */}
             </li>
             <li className="nav-item">
-                <a className="nav-link disabled">Таблица</a>
+                {/* <a className="nav-link disabled">Таблица</a> */}
             </li>
         </ul>
       </div>

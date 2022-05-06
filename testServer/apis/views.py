@@ -20,7 +20,7 @@ class TournamentDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class UsersAPIView(generics.ListAPIView):
     permission_classes = [IsAdminUserAndNotMod]
-    queryset = CustomUser.objects.all()
+    queryset = CustomUser.objects.all().order_by('id')
     serializer_class = UsersSerializers
 
 

@@ -16,7 +16,6 @@ class TournamentSerializer(serializers.ModelSerializer):
             "description",
             "type",
             "format",
-            "is_cancelled"
         )
 
 
